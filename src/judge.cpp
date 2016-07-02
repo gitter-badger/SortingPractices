@@ -6,13 +6,13 @@ using namespace std;
 
 bool compare(int A, int B)
 {
-	return A/10 < B/10;
+	return A/10 < B/10; // correct order
 }
 
 vector<int> mySort(vector<int> target, bool (*cmp)(int, int))
 {
 	vector<int> sorted(target);
-	BubbleSort(sorted, cmp);
+	InsertionSort1(sorted, cmp);
 	return sorted;
 }
 
