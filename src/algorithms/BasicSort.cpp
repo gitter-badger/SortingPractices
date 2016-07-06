@@ -1,5 +1,18 @@
 #include "../../inc/algorithms.h"
 
+void SelectionSort(vector<int> &data, bool (*COMPARE)(int, int))
+{
+	for(int i = 0; i < SIZE; ++i){
+		int min_index = i, j;
+		for(j = i; j < SIZE; ++j){
+			if(!COMPARE(data[min_index], data[j])){
+				min_index = j;
+			}
+		}
+		SWAP(data[i], data[min_index]);
+	}
+}
+
 void InsertionSort1(vector<int> &data, bool (*COMPARE)(int, int))
 {
 	for(int i = 0; i < SIZE; ++i){
