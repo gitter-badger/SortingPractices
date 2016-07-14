@@ -10,7 +10,7 @@ LIB = -L /usr/foo/lib     #include libraries
 
 SRC = $(wildcard src/*.cpp) $(wildcard src/algorithms/*.cpp)
 OBJ = $(SRC:src/%.cpp=bin/%.o)
-EXE = judge.exe
+EXE = judge
 
 ifneq (${VSCODE}, true)
 	END   = $(shell echo -e "\033[0m")
@@ -25,7 +25,7 @@ compilation: $(EXE)
 	@ echo "The programs have been compiled successfully."
 	
 execution:
-	@ $(EXE)
+	@ ./$(EXE)
 	
 clean:
 	rm -rf $(OBJ) $(EXE)
@@ -36,5 +36,6 @@ $(EXE): $(OBJ)
 	@ echo "Linking completed."
 	
 $(OBJ): bin/%.o : src/%.cpp
+	@ mkdir -p bin/algorithms/
 	@ g++ -c $< -o $@ $(CFLAGS)
 	@ echo "Compiling "$<" completed."
