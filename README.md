@@ -1,4 +1,6 @@
 # SortingPractices
+
+[![Join the chat at https://gitter.im/RedBug312/SortingPractices](https://badges.gitter.im/RedBug312/SortingPractices.svg)](https://gitter.im/RedBug312/SortingPractices?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 practicing of all the common sorting algorithms.
 
 ## how to test
